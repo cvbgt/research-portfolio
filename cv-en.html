@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Dongyoung Lee — Research CV</title><style>
+@page { size: A4 portrait; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: #14201e; }
+body {
+  font-family: "Noto Sans CJK KR", "Noto Sans CJK", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+  font-size: 7.45pt;
+  font-weight: 430;
+  line-height: 1.32;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+a { color: inherit; text-decoration: none; }
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  padding: 8mm 9mm 6mm;
+  break-after: page;
+  page-break-after: always;
+  background: #fff;
+}
+.page:last-child { break-after: auto; page-break-after: auto; }
+.cv-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5mm;
+  align-items: end;
+  margin-bottom: 3.2mm;
+  padding-bottom: 2.5mm;
+  border-bottom: .55mm solid #0b6f67;
+}
+.cv-header--portrait { grid-template-columns: 17mm minmax(0, 1fr) auto; align-items: center; }
+.cv-portrait {
+  display: block;
+  width: 17mm;
+  height: 19mm;
+  object-fit: cover;
+  object-position: center 34%;
+  border: .25mm solid #9eb5b1;
+  border-radius: 1mm;
+  background: #eef2f1;
+}
+.cv-header h1 { margin: 0; font-size: 17.5pt; font-weight: 760; line-height: 1; letter-spacing: -.025em; }
+.cv-header .role { margin-top: 1.2mm; color: #315a56; font-size: 7.7pt; font-weight: 620; }
+.contact { max-width: 88mm; color: #3e5552; font-size: 6.9pt; line-height: 1.45; text-align: right; }
+.contact span + span::before { content: " · "; color: #9aa9a6; }
+.institution-link { color: #0b6f67; text-decoration: underline; text-decoration-color: #9eb5b1; text-underline-offset: .45mm; }
+.profile-strip {
+  display: grid;
+  grid-template-columns: 29mm minmax(0, 1fr);
+  gap: 4mm;
+  margin-bottom: 3mm;
+  padding: 2.2mm 2.8mm;
+  border: .25mm solid #c8d3d0;
+  background: #f5f7f6;
+}
+.profile-strip h2 { border: 0; margin: .2mm 0 0; padding: 0; }
+.profile-strip ul { columns: 2; column-gap: 6mm; }
+.columns { display: grid; grid-template-columns: .88fr 1.22fr; gap: 5mm; align-items: start; }
+.columns.equal { grid-template-columns: 1fr 1fr; }
+.columns.priority-grid { grid-template-columns: 1.08fr .92fr; }
+.cv-column { min-width: 0; }
+.section { margin: 0 0 1.6mm; break-inside: avoid; }
+h2 {
+  margin: 0 0 1.35mm;
+  padding-bottom: .75mm;
+  border-bottom: .25mm solid #9eb5b1;
+  color: #0b6f67;
+  font-size: 9.2pt;
+  font-weight: 760;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+}
+h3 { margin: 0 0 .6mm; font-size: 7.8pt; font-weight: 720; line-height: 1.25; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+.points { padding-left: 3.1mm; list-style: square; }
+.points li { margin: 0 0 .65mm; padding-left: .4mm; }
+.points li::marker { color: #a44e30; font-size: .75em; }
+.timeline > li,
+.talk-list > li {
+  display: grid;
+  grid-template-columns: 16.5mm minmax(0, 1fr);
+  gap: 1.5mm;
+  margin-bottom: 1.15mm;
+}
+.timeline time, .talk-list time { color: #526a66; font-size: 6.65pt; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.item-title { font-weight: 650; }
+.meta { color: #526a66; font-size: 6.65pt; }
+.submeta { margin-top: .35mm; color: #667b78; font-size: 6.45pt; }
+.rx-group { margin-bottom: 1.5mm; }
+.rx-group h3 .years { margin-left: 1.2mm; color: #61736f; font-size: 6.5pt; font-weight: 560; white-space: nowrap; }
+.rx-list li { display: grid; grid-template-columns: 15mm minmax(0, 1fr); gap: 1.2mm; margin-bottom: .55mm; }
+.rx-list time { color: #61736f; font-size: 6.45pt; white-space: nowrap; }
+.case { margin-bottom: 1.8mm; padding-left: 2mm; border-left: .55mm solid #a44e30; }
+.case .points { margin-bottom: .8mm; }
+.case-output { color: #315a56; font-size: 6.45pt; }
+.numbered { counter-reset: cv-item; }
+.numbered > li {
+  counter-increment: cv-item;
+  display: grid;
+  grid-template-columns: 4.5mm minmax(0, 1fr);
+  gap: 1mm;
+  margin-bottom: 1.35mm;
+  break-inside: avoid;
+}
+.numbered > li::before {
+  content: counter(cv-item, decimal-leading-zero);
+  color: #a44e30;
+  font-size: 6.4pt;
+  font-weight: 720;
+  font-variant-numeric: tabular-nums;
+}
+.publication { min-width: 0; overflow-wrap: anywhere; }
+.publication .title { font-weight: 650; }
+.publication strong { color: #0b6f67; font-weight: 760; }
+.publication .citation { color: #526a66; font-size: 6.55pt; }
+.tag { margin-left: 1mm; color: #a44e30; font-size: 6.1pt; font-weight: 720; white-space: nowrap; }
+.cap-row { margin-bottom: .55mm; }
+.cap-row strong { display: inline; margin-right: 1mm; color: #315a56; font-size: 6.85pt; }
+.cap-row span { color: #455d59; font-size: 6.45pt; }
+.award-list li, .funding-list li { margin-bottom: 1.15mm; break-inside: avoid; }
+.award-list time { margin-right: 1mm; color: #526a66; font-size: 6.4pt; white-space: nowrap; }
+.funding-list .grant { color: #526a66; font-size: 6.3pt; white-space: nowrap; }
+.funding-list .role { color: #2f6f63; font-weight: 640; }
+.thesis-title { margin-bottom: 1mm; font-weight: 680; }
+.compact { font-size: 6.7pt; line-height: 1.28; }
+.page-no { position: absolute; right: 9mm; bottom: 3.3mm; color: #7e918d; font-size: 6.2pt; }
+html[lang="en"] body { font-size: 6.9pt; line-height: 1.24; }
+html[lang="en"] .contact { font-size: 6.6pt; }
+html[lang="en"] .section { margin-bottom: 1.3mm; }
+html[lang="en"] .compact { font-size: 6.4pt; line-height: 1.23; }
+html[lang="en"] .cap-row { margin-bottom: .25mm; }
+html[lang="en"] .columns:not(.equal) { grid-template-columns: 1.03fr 1fr; }
+html[lang="en"] .columns.equal { grid-template-columns: .84fr 1.16fr; }
+html[lang="en"] .columns.priority-grid { grid-template-columns: 1.1fr .9fr; }
+html[lang="en"] .timeline > li, html[lang="en"] .talk-list > li { grid-template-columns: 15.5mm minmax(0, 1fr); }
+</style><style>
+@media screen and (max-width: 800px) {
+  .page { width: 100%; height: auto; overflow: visible; padding: 24px 18px; }
+  .page * { min-width: 0; overflow-wrap: anywhere; }
+  .cv-header, .cv-header--portrait { grid-template-columns: 17mm minmax(0, 1fr); }
+  .contact { grid-column: 1 / -1; max-width: none; text-align: left; }
+  .columns, html[lang] .columns:not(.equal), html[lang] .columns.equal,
+  html[lang] .columns.priority-grid, .profile-strip { grid-template-columns: 1fr; }
+  .profile-strip ul { columns: 1; }
+  .funding-list .grant { white-space: normal; }
+  .page-no { position: static; margin-top: 16px; }
+}
+</style></head><body><div class="page"><header class="cv-header cv-header--portrait"><img class="cv-portrait" src="images/researcher-robotic-hand.jpg" alt="Researcher holding an experimental robotic hand" width="1365" height="2048"><div><h1>Dongyoung Lee</h1><div class="role">Researcher, Physical AI Components and Sensors Lab · ETRI</div></div><div class="contact"><span><a href="https://orcid.org/0000-0002-6716-1023">ORCID</a></span><span><a href="https://scholar.google.com/citations?user=A8TjCO8AAAAJ&amp;hl=ko">Google Scholar</a></span><span>Daejeon, Korea</span></div></header><section class="profile-strip"><h2>Research Profile</h2><div><h3>Intelligent Actuators and Sensors from Diverse Physical Principles</h3><p class="compact">I implement actuation and sensing principles as devices and components, then develop them into self-contained modules that improve system integration and maturity. I validate the modules in wearable systems and robots.</p><ul class="points compact"><li>An actuator or sensor becomes a usable component only when its physical principle, structure, circuitry, and control work together.</li><li>I implement diverse actuation and sensing mechanisms as devices that can be fabricated and tested.</li><li>I evaluate performance, lifetime, repeatability, and power, signal, and mechanical interfaces together.</li><li>I develop validated devices into self-contained modules and evaluate them in wearable systems and robots under physical contact.</li></ul></div></section><div class="columns priority-grid"><div class="cv-column page-one-left"><section class="section"><h2>Publications</h2><ol class="numbered"><li class="publication"><div><a class="title" href="https://doi.org/10.1038/S41528-026-00538-4">Scalable in-situ fabrication of multimodal electronic skin for intelligent robotics and interactive systems</a><div>Hakhyun Lim, Jungrak Choi, Chankyu Han, Dabin Kim, Hanbit Jin, Minki Kim, Yunjeong Kim, Jinhyeok Yang, Saerom Seo, Jaehoon Jung, Hunpyo Ju, Chan-Hwa Hong, <strong>Dongyoung Lee</strong>, Junseong Ahn, Hye Jin Kim</div><div class="citation"><em>npj Flexible Electronics</em> · 2026 · 10.1038/S41528-026-00538-4</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1002/advs.202510291">A Three‐Phase Electrostatic Clutch with Variable Mechanical Impedance Control for Soft Robotic Systems</a><span class="tag">First Author</span><div><strong>Dongyoung Lee</strong>, Heejin Yu, Joonbum Bae</div><div class="citation"><em>Advanced Science</em> · 2025 · 10.1002/advs.202510291</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1002/adfm.202409841">Soft Multimodal Sensors with Decoupled Multimodality and Minimal Wiring for Wearable Systems</a><span class="tag">First Author</span><div><strong>Dongyoung Lee</strong>, Joonbum Bae</div><div class="citation"><em>Advanced Functional Materials</em> · 2024 · 10.1002/adfm.202409841</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1109/LRA.2024.3360808">Development of a Soft Semi-Active Suit Using Electro-Static Clutches for Assisting Static Holding Tasks</a><span class="tag">First Author</span><div><strong>Dongyoung Lee</strong>, Heejin Yu, Joonbum Bae</div><div class="citation"><em>IEEE Robotics and Automation Letters</em> · 2024 · 10.1109/LRA.2024.3360808</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1109/TIE.2023.3277074">Individually Addressable Multitouch Sensors Using a Sweep Signal for Minimal Wiring Complexity</a><span class="tag">First Author</span><div><strong>Dongyoung Lee</strong>, Joonbum Bae</div><div class="citation"><em>IEEE Transactions on Industrial Electronics</em> · 2024 · 10.1109/TIE.2023.3277074</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1177/00405175221143543">Development of clothing-type platforms considering pressure and user satisfaction: focusing on industrial workers who tend to lift loads</a><div>Yehyoun Kim, Jeesoo Kim, <strong>Dongyoung Lee</strong>, Jiaoli Piao, Joonbum Bae, Sumin Helen Koo</div><div class="citation"><em>Textile Research Journal</em> · 2023 · 10.1177/00405175221143543</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.7746/jkros.2021.16.2.079">Development of an Electro-hydraulic Soft Zipping Actuator with Self-sensing Mechanism</a><span class="tag">First Author</span><div><strong>Dongyoung Lee</strong>, Bokeon Kwak, Joonbum Bae</div><div class="citation"><em>Journal of Korea Robotics Society</em> · 2021 · 10.7746/jkros.2021.16.2.079</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1088/1748-3190/AB36C0">Comprehensive analysis of efficient swimming using articulated legs fringed with flexible appendages inspired by a water beetle</a><div>Bokeon Kwak, <strong>Dongyoung Lee</strong>, Joonbum Bae</div><div class="citation"><em>Bioinspiration &amp; Biomimetics</em> · 2019 · 10.1088/1748-3190/AB36C0</div></div></li></ol></section><section class="section"><h2>Education &amp; Employment</h2><ul class="timeline"><li><time>2024–Present</time><div><span class="item-title">Researcher/Ph.D. · Physical AI Components and Sensors Lab</span><div class="meta">ETRI</div></div></li><li><time>2024–2024</time><div><span class="item-title">Researcher/Ph.D. · Mechanical Engineering</span><div class="meta"><a class="institution-link" href="https://www.unist.ac.kr/">Ulsan National Institute of Science and Technology</a></div></div></li><li><time>2018–2024</time><div><span class="item-title">Combined M.S.-Ph.D. · Mechanical Engineering</span><div class="meta"><a class="institution-link" href="https://www.unist.ac.kr/">Ulsan National Institute of Science and Technology</a></div><div class="submeta"><a class="institution-link" href="https://birc.korea.ac.kr/">Bio Robotics and Control Lab (BiRC) · Advisor: Joonbum Bae</a></div></div></li><li><time>2014–2018</time><div><span class="item-title">B.S. · Mechanical Engineering</span><div class="meta"><a class="institution-link" href="https://www.unist.ac.kr/">Ulsan National Institute of Science and Technology</a></div><div class="submeta">1st Track Mechanical Engineering · 2nd Track Human and Systems Engineering</div></div></li></ul></section></div><div class="cv-column page-one-right"><section class="section"><h2>Selected Research</h2><div class="case"><h3>Variable Mechanical Impedance Actuation</h3><ul class="points compact"><li>With three-phase voltage modulation, I reduced stick–slip force variation tenfold versus DC/AC drive while regulating force transmission and mechanical impedance.</li><li>I validated static load support and wearable assistance in a semi-active soft suit.</li></ul><div class="case-output"><strong>Journal:</strong> Advanced Science 2025 · IEEE Robotics and Automation Letters 2024</div><div class="case-output"><strong>Conference:</strong> Human-Centered Soft Robotics Research Center (SRRC) Workshop 2024 · IEEE International Conference on Robotics and Automation (ICRA) 2023</div></div><div class="case"><h3>Minimally Wired Multimodal Sensing</h3><ul class="points compact"><li>Frequency sweeps and channel separation enabled simultaneous, decoupled readout of 12 strain and force signals over two wires.</li><li>I applied the same swept-frequency principle to a multitouch sensor array, decoupling channel count from wiring complexity.</li></ul><div class="case-output"><strong>Journal:</strong> Advanced Functional Materials 2024 · IEEE Transactions on Industrial Electronics 2024</div><div class="case-output"><strong>Conference:</strong> IEEE International Conference on Soft Robotics (RoboSoft) 2025 · Korean Sensors Society Fall Conference 2024</div></div></section><section class="section"><h2>Research Experience</h2><div class="rx-group"><h3><a class="institution-link" href="https://birc.korea.ac.kr/">BiRC Lab, Mechanical Engineering, UNIST · Combined M.S.–Ph.D.</a><span class="years">2018–2024</span></h3><ul class="rx-list"><li><time>2022–2024</time><span>Developed a damping-controllable electrostatic clutch</span></li><li><time>2022–2024</time><span>Developed a multifunctional sensor that reads different signal types over only two wires</span></li><li><time>2020–2022</time><span>Developed a soft exosuit using electrostatic clutches</span></li><li><time>2020–2022</time><span>Developed a sensing system that reads multiple soft sensors over only two wires</span></li><li><time>2018–2020</time><span>Developed an electro-hydraulic zipping actuator for haptic systems</span></li></ul></div><div class="rx-group"><h3><a class="institution-link" href="https://birc.korea.ac.kr/">BiRC Lab, UNIST · Undergraduate Researcher</a><span class="years">2016–2018</span></h3><ul class="rx-list"><li><time>2017–2018</time><span>Developed a water-beetle-inspired swimming robot and a Marangoni-propulsion aquatic robot (bio-inspired robotics)</span></li><li><time>2016–2017</time><span>Developed a motion-tracking system and the control system of a 7-DOF robot arm (teleoperation)</span></li></ul></div></section><section class="section"><h2>Doctoral Thesis</h2><p class="thesis-title">Novel Signal Modulation Methods to Improve the Function of Electrostatic Actuators and Sensors in Wearable Systems</p><div class="meta">Ph.D. in Mechanical Engineering, Ulsan National Institute of Science and Technology (UNIST) · 2024-02-15</div><ul class="points compact"><li>Wearable actuators must be light and compliant, while sensors must be distributed over large areas.</li><li>Motor–gearbox actuators are heavy and rigid, and sensor arrays become harder to scale as every additional channel increases wiring.</li><li>This dissertation implements muscle- and skin-like functions at the device level and unifies actuation and sensing through electrical signal modulation.</li><li>Muscle functions are implemented through phase modulation, and skin-like sensing through frequency modulation.</li></ul><h3 style="margin-top:1.2mm">Core Contribution</h3><ul class="points compact"><li>A shared electrical-signal-domain methodology addresses actuation and sensing rather than relying on materials alone.</li><li>Electrostatic actuation reproduces isometric support and deformation generation without electromagnetic force.</li><li>Frequency-domain sensing enables tactile arrays whose wiring does not increase with the number of channels.</li></ul></section></div></div><div class="page-no">Page 1 / 2</div></div><div class="page"><header class="cv-header cv-header--compact"><div><h1>Dongyoung Lee</h1><div class="role">Researcher, Physical AI Components and Sensors Lab · ETRI</div></div><div class="contact"><span><a href="https://orcid.org/0000-0002-6716-1023">ORCID</a></span><span><a href="https://scholar.google.com/citations?user=A8TjCO8AAAAJ&amp;hl=ko">Google Scholar</a></span><span>Daejeon, Korea</span></div></header><div class="columns equal"><div class="cv-column page-two-left"><section class="section"><h2>Conference Presentations</h2><ul class="talk-list"><li><time>2025-04-24</time><div><span class="item-title">Frequency Response-Based Approach for Minimal Wiring Design in Multi-Channel Sensor Wearable Systems</span><div class="meta">IEEE International Conference on Soft Robotics (RoboSoft) · First Author · Late Breaking Poster</div></div></li><li><time>2024-08-26</time><div><span class="item-title">Development of Sensor Measurement Method using Frequency Response Analysis for Multi-channel Tactile Sensor Array</span><div class="meta">Korean Sensors Society Fall Conference · First Author · Best Paper Award</div></div></li><li><time>2024-02-15</time><div><span class="item-title">Development of a Variable Mechanical Impedance 3-Phase Electrostatic Clutch</span><div class="meta">Human-Centered Soft Robotics Research Center (SRRC) Workshop · First Author · Best Poster Award</div></div></li><li><time>2023-11-02</time><div><span class="item-title">Development of a Soft Electrostatic Semi-Active Upper-Arm Assistive System for Industrial Workers</span><div class="meta">KSME Annual Conference · First Author</div></div></li><li><time>2023-08-17</time><div><span class="item-title">Development of a Semi-Active Upper Arm Assistive Soft Wearable Suit using an Electrostatic Clutch</span><div class="meta">Human-Centered Soft Robotics Research Center (SRRC) Workshop · First Author</div></div></li><li><time>2023-06-01</time><div><span class="item-title">Development of a Semi-Active Upper Arm Assistive Soft Wearable Suit using an Electrostatic Clutch</span><div class="meta">IEEE International Conference on Robotics and Automation (ICRA) · First Author · Late Breaking Poster</div></div></li><li><time>2022-08-19</time><div><span class="item-title">Individually Addressable Multitouch Sensors</span><div class="meta">Human-Centered Soft Robotics Research Center (SRRC) Workshop · First Author · Grand Prize Poster Award</div></div></li><li><time>2020-08-17</time><div><span class="item-title">Development of an Electro-Hydraulic Soft Zipping Actuator</span><div class="meta">2020 Korea Robotics Society Annual Conference (KRoC) · First Author · Best Paper Award</div></div></li><li><time>2019-04-14</time><div><span class="item-title">Efficient Drag-based Swimming using Articulated Legs with Micro Hair Arrays Inspired by a Water Beetle</span><div class="meta">IEEE International Conference on Soft Robotics (RoboSoft)</div></div></li><li><time>2018-08-26</time><div><span class="item-title">Flexural Joints for Improved Linear Motion of a Marangoni Propulsion Robot: Design and Experiment</span><div class="meta">IEEE International Conference on Biomedical Robotics and Biomechatronics (BioRob)</div></div></li></ul></section><section class="section"><h2>Awards &amp; Honors</h2><ul class="award-list"><li><time>2026-01</time> <span class="item-title">2025 Top 100 National R&amp;D Achievements — Outstanding Achievement</span> · Ministry of Science and ICT<div class="submeta">“Commercialization of an Omnidirectional Tactile-Sensing Robotic Hand” — selected as one of the 12 outstanding achievements among the government-wide Top 100 National R&amp;D Achievements.</div><div class="submeta">Joint award to eight ETRI researchers</div></li><li><time>2024-09</time> <span class="item-title">Best Paper Award</span> · Korean Sensors Society Fall Conference<div class="submeta">Development of Sensor Measurement Method using Frequency Response Analysis for Multi-channel Tactile Sensor Array</div></li><li><time>2024-02</time> <span class="item-title">Best Poster Award</span> · Human-Centered Soft Robotics Research Center (SRRC, Engineering Research Center) Workshop<div class="submeta">Development of a Variable Mechanical Impedance 3-Phase Electrostatic Clutch</div></li><li><time>2022-08</time> <span class="item-title">Grand Prize Poster Award</span> · Human-Centered Soft Robotics Research Center (SRRC, Engineering Research Center) Workshop<div class="submeta">Individually Addressable Multitouch Sensors</div></li><li><time>2020-08</time> <span class="item-title">Best Paper Award</span> · Korea Robotics Society Annual Conference (KRoC)<div class="submeta">Development of an Electro-Hydraulic Soft Zipping Actuator</div></li><li><time>2018–2024</time> <span class="item-title">Graduate Scholarship</span> · Ulsan National Institute of Science and Technology (UNIST)<div class="submeta">Received throughout the combined M.S.–Ph.D. program</div></li><li><time>2018-02</time> <span class="item-title">Undergraduate Graduation Honor, Second-Highest Distinction (magna cum laude)</span> · Ulsan National Institute of Science and Technology (UNIST)<div class="submeta">School of Mechanical, Aerospace and Nuclear Engineering</div></li><li><time>2014–2018</time> <span class="item-title">National Science and Engineering Scholarship</span> · Korea Student Aid Foundation<div class="submeta">Received throughout the undergraduate program</div></li></ul></section></div><div class="cv-column page-two-right"><section class="section"><h2>Participating Research</h2><ul class="funding-list"><li><span class="item-title">Development of large-area wafer-level flexible &amp; stretchable hybrid sensor platform technology for formfactor-free highly integrated convergence sensor</span><div class="submeta">MOTIE · Korea Evaluation Institute of Industrial Technology (KEIT) · <span class="grant">RS-2022-00154781</span> · ETRI (2024–)</div></li><li><span class="item-title">Development of soft-suit technology to support human motor ability</span><div class="submeta">MSIT (ETRI R&amp;D Support Program) · <span class="grant">2022-0-00025</span> · ETRI (2024–)</div></li><li><span class="item-title">Development of Beyond X-verse Core Technology for Hyper-realistic interactions by Synchronizing the Real World and Virtual Space</span><div class="submeta role">Lead task — haptic module development and validation</div><div class="submeta">MSIT (ETRI R&amp;D Support Program) · <span class="grant">RS-2023-00216821</span> · ETRI (2024–)</div></li><li><span class="item-title">Research on hyper-realistic interaction technology for five senses and emotional experience</span><div class="submeta">ETRI Research Operation Support Program (institutional core project) · <span class="grant">25ZC1200</span> · ETRI (2024–2025)</div></li><li><span class="item-title">Unobtrusive on-skin sensor device technology for continuous musculoskeletal monitoring and rehabilitation</span><div class="submeta">MSIT (ETRI R&amp;D Support Program) · ETRI (2024)</div></li><li><span class="item-title">Research Center for Human-Centered Soft Robotics</span><div class="submeta">National Research Foundation of Korea, Engineering Research Center (ERC) · <span class="grant">NRF-2016R1A5A1938472</span> · UNIST (2023)</div></li><li><span class="item-title">Development of autonomous manipulation and gripping technology using imitation learning based on visual-tactile sensing</span><div class="submeta">MOTIE and partner ministries (KEIT) · <span class="grant">20018112</span> · UNIST (2022–2024)</div></li><li><span class="item-title">Development of soft-sensor-embedded fabric-type hybrid actuators and wearable robot technology for muscular assistance of industrial workers</span><div class="submeta role">Project manager — ran the work end to end, from the proposal through annual and final reporting</div><div class="submeta">MOTIE · Korea Evaluation Institute of Industrial Technology (KEIT) · <span class="grant">20008912</span> · UNIST (2020–2023)</div></li></ul></section><section class="section"><h2>Teaching &amp; Mentoring</h2><h3>Teaching Assistant · 4</h3><p class="compact">Advanced Control Fall 2022 · Robotics Fall 2021 · Systems Control Spring 2020 · Dynamics Spring 2019</p><h3 style="margin-top:1.6mm">Mentoring · 6</h3><p class="compact">During my doctoral studies, I mentored six undergraduate researchers and junior graduate students at my advisor’s recommendation; four of them continued to graduate school.</p><ul class="points compact"><li>Wearable Parts for a Leg-Assistive Exosuit</li><li>Characterization of a Damping-Controllable Electrostatic Clutch</li><li>Electrostatic-Clutch-Based Semi-Active Assistive Suit</li><li>Capacitive Soft Sensor Development</li><li>High-Voltage Driving Circuit for Soft Actuators</li><li>Characterization of Electrostatic Clutches</li></ul></section><section class="section"><h2>Academic Service</h2><ul class="timeline"><li><time>2025 · 2026</time><div><span class="item-title">Associate Editor</span><div class="meta">International Conference on Ubiquitous Robots (UR) · Responsible for manuscript review</div></div></li></ul></section><section class="section"><h2>Technical Capabilities</h2><div class="cap-row"><strong>Soft Robotics &amp; Wearables</strong><span>Electrostatic Clutches (Multilayer · Three-Phase) · Electrostatic Zipping Actuators (DFT) · Variable Mechanical Impedance Control · Soft Multimodal Sensors (Strain–Force Decoupling) · Frequency-Multiplexed Multichannel Sensing (SFCS · FDM) · Semi-Active Assistive Suits · Haptic Modules · Silicone Molding &amp; Casting · Thin-Film/Multilayer Lamination · Direct Printing of Liquid-Metal (eGaIn) Electrodes · Force-Transmission Test Fixtures · Force Measurement · Surface Electromyography (sEMG) Human-Subject Experiments · Motion-Capture Measurement · Sewn Fabrication of Clothing-Type Systems</span></div><div class="cap-row"><strong>Simulation &amp; Robot Control</strong><span>Robot Simulation Environments (NVIDIA Isaac Sim · Isaac Lab) · Robot Middleware Integration (ROS 2) · Motion Retargeting · Real-Time Control Pipelines · Dynamics &amp; Control Analysis (MATLAB · Simulink) · Sensor Modeling (Noise · Latency · Bias · Saturation) · Finite-Element Analysis (COMSOL · ABAQUS)</span></div><div class="cap-row"><strong>Mechanism Design &amp; CAD</strong><span>CATIA · SolidWorks · Fusion 360 · Gear · Linkage · Cam Mechanism Design · Design for Additive Manufacturing (DfAM) · Dimensional Tolerancing &amp; Fits · Prototype Fabrication Planning · Outsourced Machining Specifications &amp; Inspection</span></div><div class="cap-row"><strong>Circuit &amp; PCB</strong><span>High-Voltage Drive Circuits (HV Bridges · IGBTs) · LC-Notch &amp; RLC-Decoupling Sensing Circuits · SPICE Circuit Simulation · FPCB Electrode Pattern Design · PID Force-Feedback Control Firmware · PCB Design · ERC · Manufacturing-Data Handoff</span></div><div class="cap-row"><strong>Research Automation &amp; Reproducibility</strong><span>Instrumentation-Data Processing · Automated Plot Generation · Iterative Design-Parameter Calculation · Sweeps · Automated-Result Validation · Experimental-Condition Tracking</span></div></section></div></div><div class="page-no">Page 2 / 2</div></div></body></html>

@@ -1,0 +1,152 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>이동영 — 연구 CV</title><style>
+@page { size: A4 portrait; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: #14201e; }
+body {
+  font-family: "Noto Sans CJK KR", "Noto Sans CJK", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+  font-size: 7.45pt;
+  font-weight: 430;
+  line-height: 1.32;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+a { color: inherit; text-decoration: none; }
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  padding: 8mm 9mm 6mm;
+  break-after: page;
+  page-break-after: always;
+  background: #fff;
+}
+.page:last-child { break-after: auto; page-break-after: auto; }
+.cv-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5mm;
+  align-items: end;
+  margin-bottom: 3.2mm;
+  padding-bottom: 2.5mm;
+  border-bottom: .55mm solid #0b6f67;
+}
+.cv-header--portrait { grid-template-columns: 17mm minmax(0, 1fr) auto; align-items: center; }
+.cv-portrait {
+  display: block;
+  width: 17mm;
+  height: 19mm;
+  object-fit: cover;
+  object-position: center 34%;
+  border: .25mm solid #9eb5b1;
+  border-radius: 1mm;
+  background: #eef2f1;
+}
+.cv-header h1 { margin: 0; font-size: 17.5pt; font-weight: 760; line-height: 1; letter-spacing: -.025em; }
+.cv-header .role { margin-top: 1.2mm; color: #315a56; font-size: 7.7pt; font-weight: 620; }
+.contact { max-width: 88mm; color: #3e5552; font-size: 6.9pt; line-height: 1.45; text-align: right; }
+.contact span + span::before { content: " · "; color: #9aa9a6; }
+.institution-link { color: #0b6f67; text-decoration: underline; text-decoration-color: #9eb5b1; text-underline-offset: .45mm; }
+.profile-strip {
+  display: grid;
+  grid-template-columns: 29mm minmax(0, 1fr);
+  gap: 4mm;
+  margin-bottom: 3mm;
+  padding: 2.2mm 2.8mm;
+  border: .25mm solid #c8d3d0;
+  background: #f5f7f6;
+}
+.profile-strip h2 { border: 0; margin: .2mm 0 0; padding: 0; }
+.profile-strip ul { columns: 2; column-gap: 6mm; }
+.columns { display: grid; grid-template-columns: .88fr 1.22fr; gap: 5mm; align-items: start; }
+.columns.equal { grid-template-columns: 1fr 1fr; }
+.columns.priority-grid { grid-template-columns: 1.08fr .92fr; }
+.cv-column { min-width: 0; }
+.section { margin: 0 0 1.6mm; break-inside: avoid; }
+h2 {
+  margin: 0 0 1.35mm;
+  padding-bottom: .75mm;
+  border-bottom: .25mm solid #9eb5b1;
+  color: #0b6f67;
+  font-size: 9.2pt;
+  font-weight: 760;
+  line-height: 1.1;
+  letter-spacing: -.015em;
+}
+h3 { margin: 0 0 .6mm; font-size: 7.8pt; font-weight: 720; line-height: 1.25; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+.points { padding-left: 3.1mm; list-style: square; }
+.points li { margin: 0 0 .65mm; padding-left: .4mm; }
+.points li::marker { color: #a44e30; font-size: .75em; }
+.timeline > li,
+.talk-list > li {
+  display: grid;
+  grid-template-columns: 16.5mm minmax(0, 1fr);
+  gap: 1.5mm;
+  margin-bottom: 1.15mm;
+}
+.timeline time, .talk-list time { color: #526a66; font-size: 6.65pt; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.item-title { font-weight: 650; }
+.meta { color: #526a66; font-size: 6.65pt; }
+.submeta { margin-top: .35mm; color: #667b78; font-size: 6.45pt; }
+.rx-group { margin-bottom: 1.5mm; }
+.rx-group h3 .years { margin-left: 1.2mm; color: #61736f; font-size: 6.5pt; font-weight: 560; white-space: nowrap; }
+.rx-list li { display: grid; grid-template-columns: 15mm minmax(0, 1fr); gap: 1.2mm; margin-bottom: .55mm; }
+.rx-list time { color: #61736f; font-size: 6.45pt; white-space: nowrap; }
+.case { margin-bottom: 1.8mm; padding-left: 2mm; border-left: .55mm solid #a44e30; }
+.case .points { margin-bottom: .8mm; }
+.case-output { color: #315a56; font-size: 6.45pt; }
+.numbered { counter-reset: cv-item; }
+.numbered > li {
+  counter-increment: cv-item;
+  display: grid;
+  grid-template-columns: 4.5mm minmax(0, 1fr);
+  gap: 1mm;
+  margin-bottom: 1.35mm;
+  break-inside: avoid;
+}
+.numbered > li::before {
+  content: counter(cv-item, decimal-leading-zero);
+  color: #a44e30;
+  font-size: 6.4pt;
+  font-weight: 720;
+  font-variant-numeric: tabular-nums;
+}
+.publication { min-width: 0; overflow-wrap: anywhere; }
+.publication .title { font-weight: 650; }
+.publication strong { color: #0b6f67; font-weight: 760; }
+.publication .citation { color: #526a66; font-size: 6.55pt; }
+.tag { margin-left: 1mm; color: #a44e30; font-size: 6.1pt; font-weight: 720; white-space: nowrap; }
+.cap-row { margin-bottom: .55mm; }
+.cap-row strong { display: inline; margin-right: 1mm; color: #315a56; font-size: 6.85pt; }
+.cap-row span { color: #455d59; font-size: 6.45pt; }
+.award-list li, .funding-list li { margin-bottom: 1.15mm; break-inside: avoid; }
+.award-list time { margin-right: 1mm; color: #526a66; font-size: 6.4pt; white-space: nowrap; }
+.funding-list .grant { color: #526a66; font-size: 6.3pt; white-space: nowrap; }
+.funding-list .role { color: #2f6f63; font-weight: 640; }
+.thesis-title { margin-bottom: 1mm; font-weight: 680; }
+.compact { font-size: 6.7pt; line-height: 1.28; }
+.page-no { position: absolute; right: 9mm; bottom: 3.3mm; color: #7e918d; font-size: 6.2pt; }
+html[lang="en"] body { font-size: 6.9pt; line-height: 1.24; }
+html[lang="en"] .contact { font-size: 6.6pt; }
+html[lang="en"] .section { margin-bottom: 1.3mm; }
+html[lang="en"] .compact { font-size: 6.4pt; line-height: 1.23; }
+html[lang="en"] .cap-row { margin-bottom: .25mm; }
+html[lang="en"] .columns:not(.equal) { grid-template-columns: 1.03fr 1fr; }
+html[lang="en"] .columns.equal { grid-template-columns: .84fr 1.16fr; }
+html[lang="en"] .columns.priority-grid { grid-template-columns: 1.1fr .9fr; }
+html[lang="en"] .timeline > li, html[lang="en"] .talk-list > li { grid-template-columns: 15.5mm minmax(0, 1fr); }
+</style><style>
+@media screen and (max-width: 800px) {
+  .page { width: 100%; height: auto; overflow: visible; padding: 24px 18px; }
+  .page * { min-width: 0; overflow-wrap: anywhere; }
+  .cv-header, .cv-header--portrait { grid-template-columns: 17mm minmax(0, 1fr); }
+  .contact { grid-column: 1 / -1; max-width: none; text-align: left; }
+  .columns, html[lang] .columns:not(.equal), html[lang] .columns.equal,
+  html[lang] .columns.priority-grid, .profile-strip { grid-template-columns: 1fr; }
+  .profile-strip ul { columns: 1; }
+  .funding-list .grant { white-space: normal; }
+  .page-no { position: static; margin-top: 16px; }
+}
+</style></head><body><div class="page"><header class="cv-header cv-header--portrait"><img class="cv-portrait" src="images/researcher-robotic-hand.jpg" alt="연구자가 실험용 로봇 손을 들어 보이는 모습" width="1365" height="2048"><div><h1>이동영</h1><div class="role">한국전자통신연구원(ETRI) 피지컬AI부품센서연구실 연구원</div></div><div class="contact"><span><a href="https://orcid.org/0000-0002-6716-1023">ORCID</a></span><span><a href="https://scholar.google.com/citations?user=A8TjCO8AAAAJ&amp;hl=ko">Google Scholar</a></span><span>대전</span></div></header><section class="profile-strip"><h2>연구 목표</h2><div><h3>다양한 물리 원리로 지능형 구동기와 센서를 개발합니다</h3><p class="compact">구동·센싱 원리를 소자와 부품으로 구현하고, 독립적으로 동작하는 모듈로 구성해 시스템 완성도를 높입니다. 개발한 모듈은 착용형 시스템과 로봇에 통합해 성능과 적용 가능성을 검증합니다.</p><ul class="points compact"><li>구동기와 센서는 물리 원리, 구조, 회로, 제어가 함께 맞아야 실제 부품으로 동작합니다.</li><li>다양한 구동·센싱 메커니즘을 제작 가능한 소자로 구현합니다.</li><li>성능·수명·반복성과 전원·신호·기구 인터페이스를 함께 검증합니다.</li><li>검증한 소자를 독립 모듈로 구성하고, 착용형 시스템과 로봇의 실제 접촉 조건에서 평가합니다.</li></ul></div></section><div class="columns priority-grid"><div class="cv-column page-one-left"><section class="section"><h2>논문</h2><ol class="numbered"><li class="publication"><div><a class="title" href="https://doi.org/10.1038/S41528-026-00538-4">Scalable in-situ fabrication of multimodal electronic skin for intelligent robotics and interactive systems</a><div>Hakhyun Lim, Jungrak Choi, Chankyu Han, Dabin Kim, Hanbit Jin, Minki Kim, Yunjeong Kim, Jinhyeok Yang, Saerom Seo, Jaehoon Jung, Hunpyo Ju, Chan-Hwa Hong, <strong>Dongyoung Lee</strong>, Junseong Ahn, Hye Jin Kim</div><div class="citation"><em>npj Flexible Electronics</em> · 2026 · 10.1038/S41528-026-00538-4</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1002/advs.202510291">A Three‐Phase Electrostatic Clutch with Variable Mechanical Impedance Control for Soft Robotic Systems</a><span class="tag">제1저자</span><div><strong>Dongyoung Lee</strong>, Heejin Yu, Joonbum Bae</div><div class="citation"><em>Advanced Science</em> · 2025 · 10.1002/advs.202510291</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1002/adfm.202409841">Soft Multimodal Sensors with Decoupled Multimodality and Minimal Wiring for Wearable Systems</a><span class="tag">제1저자</span><div><strong>Dongyoung Lee</strong>, Joonbum Bae</div><div class="citation"><em>Advanced Functional Materials</em> · 2024 · 10.1002/adfm.202409841</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1109/LRA.2024.3360808">Development of a Soft Semi-Active Suit Using Electro-Static Clutches for Assisting Static Holding Tasks</a><span class="tag">제1저자</span><div><strong>Dongyoung Lee</strong>, Heejin Yu, Joonbum Bae</div><div class="citation"><em>IEEE Robotics and Automation Letters</em> · 2024 · 10.1109/LRA.2024.3360808</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1109/TIE.2023.3277074">Individually Addressable Multitouch Sensors Using a Sweep Signal for Minimal Wiring Complexity</a><span class="tag">제1저자</span><div><strong>Dongyoung Lee</strong>, Joonbum Bae</div><div class="citation"><em>IEEE Transactions on Industrial Electronics</em> · 2024 · 10.1109/TIE.2023.3277074</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1177/00405175221143543">Development of clothing-type platforms considering pressure and user satisfaction: focusing on industrial workers who tend to lift loads</a><div>Yehyoun Kim, Jeesoo Kim, <strong>Dongyoung Lee</strong>, Jiaoli Piao, Joonbum Bae, Sumin Helen Koo</div><div class="citation"><em>Textile Research Journal</em> · 2023 · 10.1177/00405175221143543</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.7746/jkros.2021.16.2.079">Development of an Electro-hydraulic Soft Zipping Actuator with Self-sensing Mechanism</a><span class="tag">제1저자</span><div><strong>Dongyoung Lee</strong>, Bokeon Kwak, Joonbum Bae</div><div class="citation"><em>Journal of Korea Robotics Society</em> · 2021 · 10.7746/jkros.2021.16.2.079</div></div></li><li class="publication"><div><a class="title" href="https://doi.org/10.1088/1748-3190/AB36C0">Comprehensive analysis of efficient swimming using articulated legs fringed with flexible appendages inspired by a water beetle</a><div>Bokeon Kwak, <strong>Dongyoung Lee</strong>, Joonbum Bae</div><div class="citation"><em>Bioinspiration &amp; Biomimetics</em> · 2019 · 10.1088/1748-3190/AB36C0</div></div></li></ol></section><section class="section"><h2>학력 · 경력</h2><ul class="timeline"><li><time>2024–현재</time><div><span class="item-title">연구원 · 박사 · 피지컬AI부품센서연구실</span><div class="meta">한국전자통신연구원(ETRI)</div></div></li><li><time>2024–2024</time><div><span class="item-title">연구원 · 박사 · 기계공학과</span><div class="meta"><a class="institution-link" href="https://www.unist.ac.kr/">울산과학기술원(UNIST)</a></div></div></li><li><time>2018–2024</time><div><span class="item-title">석·박사통합과정 · 기계공학과</span><div class="meta"><a class="institution-link" href="https://www.unist.ac.kr/">울산과학기술원(UNIST)</a></div><div class="submeta"><a class="institution-link" href="https://birc.korea.ac.kr/">Bio Robotics and Control Lab (BiRC) · 지도교수 배준범</a></div></div></li><li><time>2014–2018</time><div><span class="item-title">학사 · 기계공학과</span><div class="meta"><a class="institution-link" href="https://www.unist.ac.kr/">울산과학기술원(UNIST)</a></div><div class="submeta">1트랙 기계공학 · 2트랙 인간 시스템 공학</div></div></li></ul></section></div><div class="cv-column page-one-right"><section class="section"><h2>대표 연구</h2><div class="case"><h3>가변 기계 임피던스 구동</h3><ul class="points compact"><li>3상 전압 변조로 다층 정전기 클러치의 스틱–슬립 힘 변동을 DC·AC 구동보다 10배 줄이고, 힘 전달과 기계 임피던스를 조절했습니다.</li><li>반능동 소프트 슈트에서 정적 하중 지지와 착용 보조 성능을 검증했습니다.</li></ul><div class="case-output"><strong>논문:</strong> Advanced Science 2025 · IEEE Robotics and Automation Letters 2024</div><div class="case-output"><strong>발표:</strong> 인간중심 소프트로봇기술 연구센터(SRRC) 워크숍 2024 · IEEE International Conference on Robotics and Automation (ICRA) 2023</div></div><div class="case"><h3>최소 배선 멀티모달 센싱</h3><ul class="points compact"><li>주파수 스윕과 채널 분리로 두 가닥 배선에서 변형·힘 12개 신호를 서로 분리해 동시에 판독했습니다.</li><li>같은 주파수 스윕 원리를 멀티터치 센서 배열에 적용해 채널 수와 배선 복잡도를 분리했습니다.</li></ul><div class="case-output"><strong>논문:</strong> Advanced Functional Materials 2024 · IEEE Transactions on Industrial Electronics 2024</div><div class="case-output"><strong>발표:</strong> IEEE International Conference on Soft Robotics (RoboSoft) 2025 · 한국센서학회 추계학술대회 2024</div></div></section><section class="section"><h2>연구 경험</h2><div class="rx-group"><h3><a class="institution-link" href="https://birc.korea.ac.kr/">UNIST 기계공학과 BiRC 연구실 · 석박사통합과정</a><span class="years">2018–2024</span></h3><ul class="rx-list"><li><time>2022–2024</time><span>감쇠 조절형 정전기 클러치 개발</span></li><li><time>2022–2024</time><span>서로 다른 종류의 신호를 두 가닥 배선으로 읽는 다기능 센서 개발</span></li><li><time>2020–2022</time><span>정전기 클러치를 이용한 소프트 엑소슈트 개발</span></li><li><time>2020–2022</time><span>소프트 센서 여러 개를 두 가닥 배선으로 읽는 센싱 시스템 개발</span></li><li><time>2018–2020</time><span>햅틱 시스템을 위한 전기-유압식 지핑 구동기 개발</span></li></ul></div><div class="rx-group"><h3><a class="institution-link" href="https://birc.korea.ac.kr/">UNIST BiRC 연구실 · 학부연구생</a><span class="years">2016–2018</span></h3><ul class="rx-list"><li><time>2017–2018</time><span>물방개 모사 수영 로봇 · 마랑고니 추진 수상 로봇 개발 (생체모사 로봇)</span></li><li><time>2016–2017</time><span>모션 트래킹 시스템 · 7자유도 로봇팔 제어 시스템 개발 (원격조작)</span></li></ul></div></section><section class="section"><h2>학위논문</h2><p class="thesis-title">Novel Signal Modulation Methods to Improve the Function of Electrostatic Actuators and Sensors in Wearable Systems</p><div class="meta">울산과학기술원(UNIST) 기계공학과 공학박사 · 2024-02-15</div><ul class="points compact"><li>착용형 시스템의 구동부는 가볍고 부드러워야 하며, 센서는 넓은 면적에 분포해야 합니다.</li><li>모터·감속기 기반 구동부는 무겁고 단단하며, 센서 배열은 채널이 늘수록 배선도 함께 늘어납니다.</li><li>본 논문은 사람의 근육과 피부가 만족하는 조건을 소자 수준에서 구현하고, 구동과 센싱을 「전기 신호의 변조」라는 관점으로 묶습니다.</li><li>근육의 기능은 위상 변조로, 피부의 감각은 주파수 변조로 구현했습니다.</li></ul><h3 style="margin-top:1.2mm">핵심 기여</h3><ul class="points compact"><li>구동과 센싱이라는 서로 다른 문제를 재료가 아닌 전기 신호 영역의 공통 방법론으로 해결했습니다.</li><li>정전기 구동으로 전자기력에 기대지 않고 근육의 등척성 지지와 변형 생성을 구현했습니다.</li><li>주파수 영역 센싱으로 채널을 늘려도 배선이 늘지 않는 촉각 어레이를 구현했습니다.</li></ul></section></div></div><div class="page-no">쪽 1 / 2</div></div><div class="page"><header class="cv-header cv-header--compact"><div><h1>이동영</h1><div class="role">한국전자통신연구원(ETRI) 피지컬AI부품센서연구실 연구원</div></div><div class="contact"><span><a href="https://orcid.org/0000-0002-6716-1023">ORCID</a></span><span><a href="https://scholar.google.com/citations?user=A8TjCO8AAAAJ&amp;hl=ko">Google Scholar</a></span><span>대전</span></div></header><div class="columns equal"><div class="cv-column page-two-left"><section class="section"><h2>학회 발표</h2><ul class="talk-list"><li><time>2025-04-24</time><div><span class="item-title">Frequency Response-Based Approach for Minimal Wiring Design in Multi-Channel Sensor Wearable Systems</span><div class="meta">IEEE International Conference on Soft Robotics (RoboSoft) · 제1저자 · Late Breaking Poster</div></div></li><li><time>2024-08-26</time><div><span class="item-title">Development of Sensor Measurement Method using Frequency Response Analysis for Multi-channel Tactile Sensor Array</span><div class="meta">한국센서학회 추계학술대회 · 제1저자 · 우수논문상</div></div></li><li><time>2024-02-15</time><div><span class="item-title">Development of a Variable Mechanical Impedance 3-Phase Electrostatic Clutch</span><div class="meta">인간중심 소프트로봇기술 연구센터(SRRC) 워크숍 · 제1저자 · 우수 포스터상</div></div></li><li><time>2023-11-02</time><div><span class="item-title">산업현장 근로자들을 위한 소프트 정전기력 기반 반능동형 상완 보조 시스템 개발</span><div class="meta">대한기계학회 춘추학술대회 · 제1저자</div></div></li><li><time>2023-08-17</time><div><span class="item-title">Development of a Semi-Active Upper Arm Assistive Soft Wearable Suit using an Electrostatic Clutch</span><div class="meta">인간중심 소프트로봇기술 연구센터(SRRC) 워크숍 · 제1저자</div></div></li><li><time>2023-06-01</time><div><span class="item-title">Development of a Semi-Active Upper Arm Assistive Soft Wearable Suit using an Electrostatic Clutch</span><div class="meta">IEEE International Conference on Robotics and Automation (ICRA) · 제1저자 · Late Breaking Poster</div></div></li><li><time>2022-08-19</time><div><span class="item-title">개별 주소 지정 가능한 멀티 터치 센서</span><div class="meta">인간중심 소프트로봇기술 연구센터(SRRC) 워크숍 · 제1저자 · 최우수 포스터상</div></div></li><li><time>2020-08-17</time><div><span class="item-title">전기-유압식 소프트 지핑 구동기의 개발</span><div class="meta">2020 한국로봇종합학술대회(KRoC) · 제1저자 · 우수논문상</div></div></li><li><time>2019-04-14</time><div><span class="item-title">Efficient Drag-based Swimming using Articulated Legs with Micro Hair Arrays Inspired by a Water Beetle</span><div class="meta">IEEE International Conference on Soft Robotics (RoboSoft)</div></div></li><li><time>2018-08-26</time><div><span class="item-title">Flexural Joints for Improved Linear Motion of a Marangoni Propulsion Robot: Design and Experiment</span><div class="meta">IEEE International Conference on Biomedical Robotics and Biomechatronics (BioRob)</div></div></li></ul></section><section class="section"><h2>수상 · 포상</h2><ul class="award-list"><li><time>2026-01</time> <span class="item-title">2025년 국가연구개발 우수성과 100선 — 최우수성과</span> · 과학기술정보통신부<div class="submeta">「전방위 촉각감지 로봇핸드 사업화」 — 전 부처 국가R&amp;D 성과 100선 중 최우수 12건.</div><div class="submeta">한국전자통신연구원 연구진 8인 공동 수상</div></li><li><time>2024-09</time> <span class="item-title">우수논문상</span> · 한국센서학회 추계학술대회<div class="submeta">Development of Sensor Measurement Method using Frequency Response Analysis for Multi-channel Tactile Sensor Array</div></li><li><time>2024-02</time> <span class="item-title">우수 포스터상</span> · 인간중심 소프트로봇기술 연구센터(SRRC, 선도연구센터 ERC) 워크숍<div class="submeta">Development of a Variable Mechanical Impedance 3-Phase Electrostatic Clutch</div></li><li><time>2022-08</time> <span class="item-title">최우수 포스터상</span> · 인간중심 소프트로봇기술 연구센터(SRRC, 선도연구센터 ERC) 워크숍<div class="submeta">개별 주소 지정 가능한 멀티 터치 센서</div></li><li><time>2020-08</time> <span class="item-title">우수논문상</span> · 한국로봇종합학술대회(KRoC)<div class="submeta">전기-유압식 소프트 지핑 구동기의 개발</div></li><li><time>2018–2024</time> <span class="item-title">대학원 장학금</span> · 울산과학기술원(UNIST)<div class="submeta">석·박사통합과정 전 과정 수혜</div></li><li><time>2018-02</time> <span class="item-title">학사 졸업포상 준최우수 등급 (magna cum laude)</span> · 울산과학기술원(UNIST)<div class="submeta">기계항공및원자력공학부</div></li><li><time>2014–2018</time> <span class="item-title">국가우수장학금(이공계)</span> · 한국장학재단<div class="submeta">학사 전 과정 수혜</div></li></ul></section></div><div class="cv-column page-two-right"><section class="section"><h2>참여 연구</h2><ul class="funding-list"><li><span class="item-title">자유형상 고집적 융복합센서를 위한 대면적 웨이퍼레벨 유연인장 하이브리드 센서 플랫폼 기술 개발</span><div class="submeta">산업통상자원부 · 한국산업기술기획평가원(KEIT) · <span class="grant">RS-2022-00154781</span> · ETRI (2024–)</div></li><li><span class="item-title">운동능력 강화 자율 소프트슈트 기술 개발</span><div class="submeta">과학기술정보통신부 (ETRI 연구개발지원 R&amp;D) · <span class="grant">2022-0-00025</span> · ETRI (2024–)</div></li><li><span class="item-title">현실세계와 가상공간이 동기화되어 극사실적 상호 작용이 가능한 Beyond X-verse 원천기술 개발</span><div class="submeta role">주력 과제 — 햅틱 모듈 개발과 검증</div><div class="submeta">과학기술정보통신부 (ETRI 연구개발지원 R&amp;D) · <span class="grant">RS-2023-00216821</span> · ETRI (2024–)</div></li><li><span class="item-title">오감·감성 체험 초실감 상호작용 기술연구</span><div class="submeta">한국전자통신연구원 연구운영비지원(주요사업비) · <span class="grant">25ZC1200</span> · ETRI (2024–2025)</div></li><li><span class="item-title">상시 근골격 모니터링 및 재활을 위한 무자각 온스킨 센서 디바이스 기술</span><div class="submeta">과학기술정보통신부 (ETRI 연구개발지원) · ETRI (2024)</div></li><li><span class="item-title">인간중심 소프트로봇기술 연구센터</span><div class="submeta">한국연구재단 집단연구지원 — 선도연구센터 (ERC) · <span class="grant">NRF-2016R1A5A1938472</span> · UNIST (2023)</div></li><li><span class="item-title">시촉각 센싱기반 모방학습에 의한 자율조작파지 기술개발</span><div class="submeta">산업통상자원부 등 다부처 (KEIT) · <span class="grant">20018112</span> · UNIST (2022–2024)</div></li><li><span class="item-title">산업현장 근로자들의 근력 보조를 위한 소프트 센서 내장 옷감형 하이브리드 구동기 및 의복형 로봇 기술 개발</span><div class="submeta role">실무 책임자 — 제안서 작성부터 연차·최종 보고까지 전 주기 관리</div><div class="submeta">산업통상자원부 · 한국산업기술기획평가원(KEIT) · <span class="grant">20008912</span> · UNIST (2020–2023)</div></li></ul></section><section class="section"><h2>교육 · 지도</h2><h3>조교 · 4</h3><p class="compact">고급제어 2022 2학기 · 로봇공학 2021 2학기 · 시스템제어 2020 1학기 · 동역학 2019 1학기</p><h3 style="margin-top:1.6mm">학생 지도 · 6</h3><p class="compact">박사과정 중 지도교수의 권유로 학부연구생과 후배 대학원생 6명을 지도했고, 그중 4명이 대학원에 진학했습니다.</p><ul class="points compact"><li>다리 보조 엑소슈트의 착용부 개발</li><li>감쇠 조절형 정전기 클러치 특성 분석</li><li>정전기 클러치 기반 반능동 보조 슈트</li><li>정전용량형 소프트 센서 개발</li><li>소프트 구동기용 고전압 인가 회로 개발</li><li>정전기 클러치 특성 분석</li></ul></section><section class="section"><h2>학술 활동</h2><ul class="timeline"><li><time>2025 · 2026</time><div><span class="item-title">Associate Editor</span><div class="meta">International Conference on Ubiquitous Robots (UR) · 논문 심사 담당</div></div></li></ul></section><section class="section"><h2>기술 역량</h2><div class="cap-row"><strong>소프트 로보틱스 &amp; 웨어러블</strong><span>정전기 클러치 (다층·3상) · 정전기 지핑 액추에이터 (DFT) · 가변 기계 임피던스 제어 · 소프트 멀티모달 센서 (변형·힘 분리) · 주파수 다중화 기반 다채널 센싱 (SFCS · FDM) · 반능동 보조 슈트 · 햅틱 모듈 · 실리콘 몰딩·캐스팅 · 박막/다층 적층 · 액체금속(eGaIn) 전극 직접 인쇄 · 전달력 시험 지그 · 힘 계측 · 표면 근전도(sEMG) 인체 실험 · 모션캡처 계측 · 의류형 시스템 봉제 제작</span></div><div class="cap-row"><strong>시뮬레이션 &amp; 로봇 제어</strong><span>로봇 시뮬레이션 환경 구축 (NVIDIA Isaac Sim · Isaac Lab) · 로봇 미들웨어 통합 (ROS 2) · 동작 리타게팅 · 실시간 제어 파이프라인 · 동역학·제어 해석 (MATLAB · Simulink) · 센서 모델링 (노이즈·지연·바이어스·포화) · 유한요소 해석 (COMSOL · ABAQUS)</span></div><div class="cap-row"><strong>메커니즘 설계 &amp; CAD</strong><span>CATIA · SolidWorks · Fusion 360 · 기어·링키지·캠 메커니즘 설계 · 적층제조 설계(DfAM) · 치수 공차·맞춤 설계 · 시제품 제작 공정 계획 · 외주 가공 사양 정의·검수</span></div><div class="cap-row"><strong>회로 &amp; PCB</strong><span>고전압 구동 회로 (HV 브리지 · IGBT) · LC 노치·RLC 분리 센싱 회로 · SPICE 회로 시뮬레이션 · FPCB 전극 패턴 설계 · PID 힘 피드백 제어 펌웨어 · PCB 설계 · ERC · 제작 데이터 이관</span></div><div class="cap-row"><strong>연구 자동화 &amp; 재현성</strong><span>계측 데이터 처리 · 도표 자동 생성 · 설계 파라미터 반복 계산 · 스윕 · 자동화 결과 검증 · 실험 조건 추적</span></div></section></div></div><div class="page-no">쪽 2 / 2</div></div></body></html>
